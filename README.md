@@ -10,8 +10,12 @@ Movie information JSON REST API
 | GET    | /v1/movies      | listMovieHandler   | Show the details of all movies         |
 | POST   | /v1/movies      | createMovieHandler | Create a new movie                     |
 | GET    | /v1/movies/:id  | showMovieHandler   | Show the details of a specific movie   |
-| PUT    | /v1/movies/:id  | editMovieHandler   | Update the details of a specific movie |
+| PATCH  | /v1/movies/:id  | updateMovieHandler | Update the details of a specific movie |
 | DELETE | /v1/movies/:id  | deleteMovieHandler | Delete a specific movie                |
+
+### Exeptions
+
+1. JSON items with null values will be ignored and will remain unchanged.
 
 ## Directory information
 
