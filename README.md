@@ -1,5 +1,7 @@
 # moviein
 
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/twofold-one/moviein?color=lightblue&style=for-the-badge&logo=go) ![GitHub repo size](https://img.shields.io/github/repo-size/twofold-one/moviein?color=lightblue&style=for-the-badge)
+
 Movie information JSON REST API
 
 ### Description of available functionality:
