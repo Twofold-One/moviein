@@ -23,7 +23,7 @@ Movie information JSON REST API
 
 The _bin_ directory contains compiled app binaries, ready for deployment to a production server.
 
-The _cmd/api_ directory contains the application-specific code for _moveiin_ API application.
+The _cmd/api_ directory contains the application-specific code for _moviein_ API application.
 
 The _internal_ directory contains ancillary packages used by API.
 
