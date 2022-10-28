@@ -20,6 +20,10 @@ Movie information JSON REST API
 
 1. JSON items with null values will be ignored and will remain unchanged.
 
+### Known bugs
+
+~~1. There is a bug: http: superfluous response.WriteHeader call from main.(\*application).writeJSON (helpers.go:43)~~
+
 ## Directory information
 
 The _bin_ directory contains compiled app binaries, ready for deployment to a production server.
