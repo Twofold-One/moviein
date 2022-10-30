@@ -14,5 +14,8 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
-#npm
+# npm
 node_modules
+
+# environment variables
+.envrc
