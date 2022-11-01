@@ -69,7 +69,7 @@ vendor:
 # ==================================================================================== #
 
 current_time = ${shell date --iso-8601=seconds}
-git_description = ${shell git describe --always --dirty}
+git_description = ${shell git describe --always --dirty --tags --long}
 linker_flags = '-s -X main.buildTime=${current_time} -X main.version=${git_description}'
 
 
