@@ -1,0 +1,23 @@
+[Unit]
+Description=Moviein API Service
+
+After=postgresql.service
+After=network-online.target
+Wants=network-online.target
+
+StartLimitIntervalSec=600
+StartLimitBurst=5
+
+[Service]
+Type=exec
+User=moviein
+Group=moviein
+EnvironmentFile=/etc/environment
+WorkingDirectory=/home/moviein
+ExecStart=/home/moviein/api -port=4000 -db-dsn=${MOVIEIN_DB_DSN} -env=production
+
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

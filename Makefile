@@ -86,7 +86,23 @@ build/api:
 
 production_host_ip = '193.201.115.198'
 
-# production/connect: connect to the production server
+## production/connect: connect to the production server
 .PHONY: production/connect
 production/connect:
 	ssh moviein@${production_host_ip}
+
+## production/deploy/api: deploy the api to production
+.PHONY: production/deploy/api
+production/deploy/api:
+	rsync -P ./bin/linux_amd64/api moviein@${production_host_ip}:~
+	rsync -rP --delete ./migrations moviein@${production_host_ip}:~
+	rsync -P ./remote/production/api.service moviein@${production_host_ip}:~
+	rsync -P ./remote/production/Caddyfile moviein@${production_host_ip}:~
+	ssh -t moviein@${production_host_ip} '\
+	migrate -path ~/migrations -database $$MOVIEIN_DB_DSN up \
+	&& sudo mv ~/api.service /etc/systemd/system/ \
+	&& sudo systemctl enable api \
+	&& sudo systemctl restart api \
+	&& sudo mv ~/Caddyfile /etc/caddy/ \
+	&& sudo systemctl reload caddy \
+	'
