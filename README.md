@@ -19,13 +19,9 @@ Movie information JSON REST API
 | POST   | /v1/tokens/authentication | createAuthenticationTokenHandler | Generate a new authentication token    |
 | GET    | /debug/vars               | expvar.Handler                   | Display application metrics            |
 
-### Exeptions
+### Exceptions
 
 1. JSON items with null values will be ignored and will remain unchanged.
-
-### Known bugs
-
-~~1. There is a bug: http: superfluous response.WriteHeader call from main.(\*application).writeJSON (helpers.go:43)~~
 
 ## Directory information
 
