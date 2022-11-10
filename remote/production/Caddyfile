@@ -1,4 +1,8 @@
-http://moviein.tk {
+{
+    email evangerasdev@gmail.com
+}
+
+moviein.tk {
     respond /debug/* "Not Permitted" 403
     reverse_proxy localhost:4000
 }
